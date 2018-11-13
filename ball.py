@@ -30,7 +30,7 @@ for row in range(0,3):
         speed = [choice([-2,2]),choice([-2,2])]
         ball=MyBallClass(img_file,location,speed)
         balls.append(ball)
-#ceshi
+#ceshi11
 running=True
 while running:
     for event in pygame.event.get():
