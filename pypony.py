@@ -34,7 +34,7 @@ ball_speed=[10,5]
 myBall = MyBallClass("pinpang.png",ball_speed,[50,50])
 ballGroup = pygame.sprite.Group(myBall)
 paddle = MyPaddleClass([270,400])
-
+pygame.mouse.set_visible(False)
 running = True
 while running:
     clock.tick(30)
