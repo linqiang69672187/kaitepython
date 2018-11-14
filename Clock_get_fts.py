@@ -31,13 +31,14 @@ def animate(group):
 
         screen.blit(ball.image,ball.rect)
     pygame.display.flip()
-    pygame.time.delay(20)
+
 
 
 size = width,height=640,480
 screen = pygame.display.set_mode(size)
 screen.fill([255,255,255])
 img_file="Orb_Icons_001.png"
+clock = pygame.time.Clock()
 group = pygame.sprite.Group()
 for row in range(0,2):
     for column in range(0,2):
@@ -51,7 +52,6 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-
     animate(group)
-
+    clock.tick(60)
 pygame.quit()
