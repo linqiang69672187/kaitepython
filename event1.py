@@ -33,6 +33,7 @@ while running:
             elif event.key == pygame.K_DOWN:
                 my_ball.rect.top = my_ball.rect.top + 10
 
+
     clock.tick(30)
     screen.blit(bacground,(0,0))
     my_ball.move()
