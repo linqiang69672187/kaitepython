@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>122121</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -74,6 +74,16 @@
     </property>
     <property name="text">
      <string>CheckBox</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>390</y>
+      <width>104</width>
+      <height>64</height>
+     </rect>
     </property>
    </widget>
   </widget>
