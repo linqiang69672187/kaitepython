@@ -73,10 +73,10 @@ while running:
         if lives  == 0:
             final_text1 = "游戏结束"
             final_text2 = "你的最后得分:"+str(score)
-            ft1_font = pygame.font.Font('Fonts/Muyao-Softbrush.ttf',64)
+            ft1_font = pygame.font.Font('Fonts/Muyao-Softbrush.ttf',84)
             ft1_surf = ft1_font.render(final_text1,1,(0,0,0))
             ft2_font = pygame.font.Font('Fonts/Muyao-Softbrush.ttf',44)
-            ft2_surf = ft1_font.render(final_text2, 1, (0, 0, 0))
+            ft2_surf = ft2_font.render(final_text2, 1, (0, 0, 0))
             screen.blit(ft1_surf,[screen.get_width()/2-ft1_surf.get_width()/2,100])
             screen.blit(ft2_surf,[screen.get_width()/2-ft2_surf.get_width()/2,200])
             pygame.display.flip()
