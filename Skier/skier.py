@@ -1,9 +1,9 @@
 import pygame,sys,random
 
 skier_images = ["skier_down.png","skier_right1.png","skier_right2.png","skier_left2.png","skier_left1.png"]
-class SkierClass(pygame.sprite.Sprite):
+class SkierClass(pygame.sprite.Sprite):   #定义滑雪员类
     def __init__(self):
-        pygame.sprite.Sprite.__init__(self)
+        pygame.sprite.Sprite.__init__(self)  #初始化滑雪员为碰撞对象
         self.image = pygame.image.load(skier_images[0])
         self.rect = self.image.get_rect()
         self.rect.center = [320,100]
@@ -57,6 +57,7 @@ def animate():
     screen.fill([255,255,255])
     obstacles.draw(screen)
     screen.blit(skier.image,skier.rect)
+    screen.blit (score_text,[10,10])
     pygame.display.flip()
 
 pygame.init()
@@ -68,6 +69,8 @@ skier = SkierClass()
 obstacles = pygame.sprite.Group()
 create_map()
 map_position = 0
+font = pygame.font.Font(None,50)
+
 running = True
 
 while running:
@@ -87,7 +90,26 @@ while running:
     if map_position >= 640:
         create_map()
         map_position = 0
+
+
+
+    hit = pygame.sprite.spritecollide(skier,obstacles,False)
+    if hit:
+        if hit[0].type =="tree" and not hit[0].passed:
+            points -=100
+            skier.image = pygame.image.load("skier_crash.png")
+            animate()
+            pygame.time.delay(1000)
+            skier.image = pygame.image.load("skier_down.png")
+            skier.angle = 0
+            speed = [0,6]
+            hit[0].passed = True
+        elif hit[0].type =="flag" and not hit[0].passed:
+            points +=10
+            hit[0].kill()
+
     obstacles.update()
+    score_text = font.render("等分："+str(points),1,(0,0,0))
     animate()
 
 pygame.quit()
