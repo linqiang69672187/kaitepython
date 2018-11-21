@@ -41,7 +41,7 @@ class ObstacleClass(pygame.sprite.Sprite):
 def create_map():
     global obstacles
     locations = []
-    for i in range(10):
+    for i in range(30):
         row  = random.randint(0,9)
         col = random.randint(0,9)
         location = [col*64+32,row*64+32+640]
