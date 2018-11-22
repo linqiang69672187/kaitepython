@@ -9,12 +9,12 @@ class MyTest():
         self.db_obj = DatabaseManagement()
 
     def process(self):
-        person_obj = Position("james","22", 18)
-        person_obj = self.db_obj.add_obj(person_obj)
-        query_filter = and_(Position.PositionName == "james")
+       #   person_obj = Position("james","22", 18)
+       # person_obj = self.db_obj.add_obj(person_obj)
+        query_filter = and_(Position.PositionName != "")
         person_list = self.db_obj.query_all(Position, query_filter)
         for i in person_list:
-            print(i.PositionName)
+            print(i.PositionName+i.Description)
 
 
 if __name__ == "__main__":
