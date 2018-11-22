@@ -1,3 +1,4 @@
+# encoding:utf-8
 from flask import Flask,render_template,request #创建Flask程序实例
 from flask_wtf import Form
 from wtforms import StringField,SubmitField
@@ -18,9 +19,9 @@ def index():
      username = request.form['name']
      retxt=''
      if username=='林强':
-         retxt='[{"name":"linq"}]'
+         retxt='[{"name":"aa'+username+'"}]'
      else:
-         retxt ='[{"name":"others"}]'
+         retxt ='[{"name":"'+username+'"}]'
 
      return retxt
 
